@@ -12,12 +12,15 @@ export class DashboardComponent implements OnInit {
   taskObj: Task = new Task();
   taskArr: Task[] = [];
 
+  addTaskValue: string = '';
+
   constructor(private readonly crudService: CrudService) {
 
   }
   ngOnInit(): void {
     this.taskObj = new Task();
     this.taskArr = [];
+    this.addTaskValue = '';
     this.getAllTasks();
   }
 
@@ -29,8 +32,9 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  addTask(eTask: Task) {
-    this.crudService.addTask(eTask).subscribe(res => {
+  addTask() {
+    this.taskObj.task_name = this.addTaskValue;
+    this.crudService.addTask(this.taskObj).subscribe(res => {
       this.ngOnInit();
     }, err => {
       alert(err);
