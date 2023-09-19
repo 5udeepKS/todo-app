@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
   taskArr: Task[] = [];
 
   addTaskValue: string = '';
+  editTaskValue: string = '';
 
   constructor(private readonly crudService: CrudService) {
 
@@ -21,6 +22,7 @@ export class DashboardComponent implements OnInit {
     this.taskObj = new Task();
     this.taskArr = [];
     this.addTaskValue = '';
+    this.editTaskValue = '';
     this.getAllTasks();
   }
 
@@ -42,6 +44,7 @@ export class DashboardComponent implements OnInit {
   }
 
   editTask() {
+    this.taskObj.task_name = this.editTaskValue;
     this.crudService.editTask(this.taskObj).subscribe(res => {
       this.ngOnInit();
     }, err => {
@@ -55,5 +58,10 @@ export class DashboardComponent implements OnInit {
     }, err => {
       alert("Something went wrong, unable to delete task!!")
     })
+  }
+
+  call(eTask: Task) {
+    this.taskObj = eTask;
+    this.editTaskValue = eTask.task_name;
   }
 }
