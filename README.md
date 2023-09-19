@@ -1,5 +1,9 @@
 # TodoApp
 
+Before running this project, since I have used json-server currently. Run below commands
+npm install -g json-server
+json-server --watch db.json
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
 ## Development server
