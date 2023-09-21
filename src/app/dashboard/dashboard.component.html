@@ -1,5 +1,5 @@
-<div class="container-fluid bg-dark" style="height: 100%; text-align: center;">
-    <div class="container bg-dark pt-3 pb-3" style="height: 100%;">
+<div class="container-fluid bg-dark pt-1" style="text-align: center;">
+    <div class="container bg-dark pt-3 pb-3">
         <div class="row pt-5 pb-5">
             <div class=" col"></div>
             <div class="col-md-6 shadow" style="background-color: lightgrey; border-radius: 5%;">
@@ -23,7 +23,12 @@
                             <div class="input-group row ps-3">
                                 <div class="card col-md-10 border-0 pt-1">{{task.task_name}}</div>
                                 <button class="btn btn-outline-primary col me-2" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" (click)="call(task)">e</button>
+                                    data-bs-target="#exampleModal" (click)="call(task)"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-pencil" viewBox="0 0 16 16">
+                                        <path
+                                            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                                    </svg></button>
                                 <button class="btn btn-outline-danger col" (click)="deleteTask(task)">X</button>
                             </div>
                         </div>
